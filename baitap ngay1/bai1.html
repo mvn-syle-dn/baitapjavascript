@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai1</title>
+</head>
+<body>
+    1.What are the differences between a variable that is: `null`, `undefined`?
+    null là một giá trị đặc biệt có nghĩa là "không có giá trị". null là một đối tượng đặc biệt vì typeof null trả về 'đối tượng'.
+undefined có nghĩa là biến chưa được khai báo, hoặc chưa được cung cấp giá trị.
+2. Give a list of `Falsy` values in Javascript.
+if (false)
+if (null)
+if (undefined)
+if (0)
+if (-0)
+if (0n)
+if (NaN)
+if ("")
+3.What are the differences between `==` and `===`? Write an example for each case (if any)?
+=== so sánh cân bằng nghiêm ngặt (strict equality), nghĩa là nó sẽ không thực hiện chuyển đổi loại
+toán tử == so sánh trừu tượng (abstract equality), tức là nó thực hiện các chuyển đổi loại cần thiết trước khi so sánh đẳng thức
+document.write(9 == "9");//true
+document.write(9 === "9");false
+4.What is `use strict`? what are the advantages and disadvantages to using it?
+variable = "tranvanmy"; //chế  độ  thường
+console.log(variable);
+"use strict"//chế dộ strict mode
+variable = "tranvanmy";
+console.log(variable);
+Uncaught ReferenceError: variable is not defined
+Để khắc phục được điều trên thì bạn cần phải khai báo biến với từ khóa var hoặc let.
+    <script src="bai1.js"></script>
+</body>
+</html>
