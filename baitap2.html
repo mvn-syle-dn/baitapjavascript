@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>baitap2js</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="viewproduct">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>SUBJECT</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var List = [
+            {
+                id: '1',
+                subject: 'html'
+            },
+            {
+                id: '2',
+                subject: 'css'
+            },
+            {
+                id: '3',
+                subject: 'js'
+            }
+        ]
+        var list_item = JSON.parse(localStorage.getItem('product', List))   
+        function render() {
+            for (let i = 0; i < List.length; i++) {
+                var trElement = document.createElement("tr");
+                var tdElement1 = document.createElement("td");
+                tdElement1.innerHTML = List[i].id;
+                var tdElement2 = document.createElement("td");
+                tdElement2.innerHTML = List[i].subject;
+                var tdElement3 = document.createElement("td");
+                tdElement3.innerHTML = '<button onclick="Delete(' + List[i].id + ')" class="btn btn-danger">delete</button>';
+                trElement.appendChild(tdElement1);
+                trElement.appendChild(tdElement2);
+                trElement.appendChild(tdElement3);
+                var tdBody = document.getElementById('product-list');
+                tdBody.appendChild(trElement);
+            }
+            localStorage.setItem('product-list', JSON.stringify(List));
+        }
+        render();
+        function Delete(id) {
+            if (confirm("Do you want to delete ?") == true) {
+                userPreference = "Deleted successfully!";
+            } else {
+                userPreference = "delete Cancelled!";
+            }
+        };
+    </script>
+</body>
+
+</html>
