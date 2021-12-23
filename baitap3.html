@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitapngay3</title>
+</head>
+<body>
+    <script>
+        //const
+        // const x = 10;
+        // x = 11;// sẽ có lỗi  
+        // console.log(x); // có lỗi
+        // let
+        let y = 20;
+        y = 11;
+        console.log(y);
+        // template literals
+        let result = '';
+        let content = 'content html';
+        result += `<li>${content}</li>`
+        console.log(result);
+        // rest parameters
+        function name(a, ...args) {
+            return args;
+        }
+        console.log(name('mai', 'tuan', 'dao', 'vien'));
+        // default parameter
+        function sum(a = 1, b = 2) {
+            return a + b;
+        }
+        console.log(sum(5));
+        console.log(sum(2, 6));
+        //arrow function
+        let abc = () => {
+            console.log('hello arrow function');
+        }
+        abc();
+        //classes
+        class HCN {
+            constructor(canh) {
+                this.canh = canh;
+            }
+        }
+        class HV extends HCN {
+            constructor(canh) {
+                super(canh);
+            }
+            dt() {
+                console.log(`dt la:${this.canh}*${this.canh}`);
+            }
+        }
+        let h = new HV(5);
+        h.dt();
+        // promise
+        let myFirstPromise = new Promise((res, rej) => {
+            setTimeout(function () {
+                res("Success!")
+                
+            }, 2000)
+        })
+        myFirstPromise.then((successMessage) => {
+            console.log("Yeah! " + successMessage)
+        });
+        // loops
+        let arr = [123, 456, 78910];
+        for (let i of arr) {
+            console.log(i);
+        }
+        const find = arr.find(f => f > 123);
+        console.log(find);
+        const findindex = arr.findIndex(e => e === 123);
+        console.log(findindex);   
+    </script>
+</body>
+</html>
