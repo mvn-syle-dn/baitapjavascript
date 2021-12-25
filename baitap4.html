@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>bai tap ngay 4</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h2>Fetch API</h2>
+    <div class="container">
+      <div class="row"></div>
+    </div>
+    <script>
+      fetch("https://reqres.in/api/users?page=2")
+        .then((response) => {
+          return response.json();
+          console.log(response.json());
+        })
+        .then((data) => {
+          console.log(data);
+          const users = data.data;
+          let htmls = users.map((post) => {
+            return `<div class="col-4">
+                        <a href=""><img src="${post.avatar}" alt="${post.first_name}"></a>
+            <a href=""><h3>${post.first_name}</h3></a>
+            <h6>${post.email}</h6>
+             <p>${post.last_name}</p>            
+            </div>`;
+          });
+          let html = htmls.join("");
+          document.querySelector(".row").innerHTML = html;
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    </script>
+  </body>
+</html>
