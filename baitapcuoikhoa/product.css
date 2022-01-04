@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.form-control {
+  width: 380px;
+}
+#tableContent {
+  margin-top: 10px;
+  width: 780px;
+}
+.col-4 {
+  margin-left: 10px;
+}
+.action {
+  width: 160px;
+}
+img {
+  width: 100px;
+  height: 70px;
+}

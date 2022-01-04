@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>baitapcuoikhoa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="product.css">
+</head>
+<body onload="renderView()">
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <input type="hidden" id="index">
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" id="name" placeholder="name"><br>
+        <label for="image">Image:</label>
+        <input class="form-control" type="text" id="image" placeholder="image lâý đường dẫn trên mạng ạ"><br>
+        <label for="price">Price:</label>
+        <input class="form-control" type="text" id="price" placeholder="price"><br>
+        <label for="description">Description:</label>
+        <input class="form-control" type="text" id="description" placeholder="description"><br>
+        <button id="add" onclick="Add()" class="btn btn-info">Add</button>
+        <button style="display: none;" id="edit" onclick="changeName()" class="btn btn-success">Update</button>
+      </div>
+    </div>
+    <div class="col-7">
+      <table class="table" id="tableContent" border="1">
+        <thead class="thead-dark">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th class="action">Action</th>
+          </tr>
+        <tbody id="content"></tbody>
+        </thead>
+      </table>
+    </div>
+  </div>
+  <script src="product.js">
+  </script>
+</body>
+</html>
